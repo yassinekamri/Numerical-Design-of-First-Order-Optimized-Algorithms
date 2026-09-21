@@ -279,7 +279,7 @@ function linearized_pep_coords(gamma_init,nblocks,xbar,gbar,fbar,mat_gamma,mat_l
 end
 
 
-function inner_iteration(gamma, nblocks, delta, max_iters=10000, tol=1e-4)
+function inner_iteration(gamma, nblocks, delta, max_iters=1000, tol=1e-4)
     # Preallocate memory
     K = size(gamma,1)
     L = ones(nblocks)
