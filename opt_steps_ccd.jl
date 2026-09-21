@@ -282,7 +282,7 @@ function linearized_pep_coords(gamma_init,nblocks,xbar,gbar,fbar,mat_gamma,mat_l
     model = Model(Mosek.Optimizer)
     set_silent(model)
     @variable(model, tau)
-    @variable(model, lb[1:nblocks, 1:(K+2), 1:(K+2)] >= 0)
+    @variable(model, lb[1:nblocks, 1:(K+2), 1:(K+2)])
     @variable(model, gamma[1:K])
     @variable(model,s)
 
@@ -341,7 +341,7 @@ end
 # Implements the iterative linearization method with a trust-region strategy
 # for updating step-sizes gamma.
 
-function inner_iteration(gamma, nblocks, delta, max_iters=1000, tol=1e-7)
+function inner_iteration(gamma, nblocks, delta, max_iters=1000, tol=1e-4)
     # Preallocate memory
     K = size(gamma,1)
     dimG = K + 2
