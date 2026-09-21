@@ -27,7 +27,10 @@ The code is written in Julia and requires the [JuMP](https://jump.dev) optimizat
   Reproduces the benchmark results of the article. Optimizes the step sizes of memoryless gradient descent over smooth convex functions using our **First-Order Method (FOM)**.  
 
 - **benchmark_opt_steps_gradient_descent_linearization_method.jl**  
-  Reproduces the benchmark results of the article. Optimizes the step sizes of memoryless gradient descent over smooth convex functions using our **Successive Linearization Method (SLM)**.  
+  Reproduces the benchmark results of the article. Optimizes the step sizes of memoryless gradient descent over smooth convex functions using our **Successive Linearization Method (SLM)**.
+
+- **SLM_steps_bencmark_f_compositions.jl**  
+  Lists the step sizes obtained by our **Successive Linearization Method (SLM)** for optimizing memoryless gradient descent on smooth convex functions, and verifies their numerical agreement with basic $f$-composable schedules where matches were identified. The constructions follow the framework of Grimmer, Shu, and Wang in [*Composing Optimized Stepsize Schedules for Gradient Descent*](https://arxiv.org/abs/2410.16249).
 
 - **opt_step_ccd_full.jl**  
   Optimizes the step sizes of full cyclic coordinate descent (using past gradient information for the updates) over coordinate-wise smooth convex functions using SLM.  
